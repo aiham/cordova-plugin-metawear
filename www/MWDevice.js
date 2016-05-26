@@ -18,9 +18,9 @@ module.exports.connect = function(macAddress, success, failure){
     console.log("MWDevice.js: connect");
     exec(success, failure, "MWDevice", "connect", [macAddress]);
 }
-module.exports.disconnect = function(){
+module.exports.disconnect = function(success, failure){
     console.log("MWDevice.js: disconnect");
-    exec(null, null, "MWDevice", "disconnect", []);
+    exec(success, failure, "MWDevice", "disconnect", []);
 }
 
 module.exports.scanForDevices = function(success, failure){
@@ -38,9 +38,9 @@ module.exports.startAccelerometer = function(success, failure){
     exec(success, failure, "MWDevice", 'startAccelerometer', []);
 }
 
-module.exports.stopAccelerometer = function(){
+module.exports.stopAccelerometer = function(success, failure){
     console.log("MWDevice.js: stopAccelerometer");
-    exec(null, null, "MWDevice", 'stopAccelerometer', []);
+    exec(success, failure, "MWDevice", 'stopAccelerometer', []);
 }
 
 module.exports.gpioReadAnalogIn = function(pin, success, failure, pullup, readMode){
